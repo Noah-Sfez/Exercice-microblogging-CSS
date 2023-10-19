@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+p{
+    font-size: 18px;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    background-color: #c86ad1;
+}
+
+.navbar-logo {
+    width: 90px;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    display: inline;
+}
+
+.navbar-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 5px 15px;
+    text-decoration: none;
+    font-size: 28px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 920px) {
+    .navbar-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .navbar{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.mainBody{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "main aside";
+    margin-top: 2%;
+}
+main{
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 1fr 1fr;
+}
+
+.tweet{
+    background-color: rgba(234, 210, 181, 0.459);
+    margin: 2%;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.tweet:nth-child(3n) {
+    grid-column: span 2;
+}
+
+.tweet:nth-child(3n) img{
+    width: 20%;
+}
+
+.imageEtTexte{
+    display: flex;
+    gap: 10px;
+    margin-top: 2%;
+}
+
+.imageEtTexte > img{
+    width: 40%;
+}
+
+aside{
+    top: 2vh;
+    position: sticky;
+    height: 50vh;
+    background-color: rgba(128, 128, 128, 0.201);
+    padding: 2%;
+    grid-area: aside;
+}
+
+.populaires{
+    margin-top: 3%;
+    border-bottom: 2px solid black;
+}
+
+@media screen and (max-width: 768px) {
+    .mainBody {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "aside"
+        "main";
+    }
+    aside{
+        grid-area: aside;
+        background-color: rgba(255, 255, 255, 0.966);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5%;
+        height: auto;
+        top: 0;
+        transition: 0.5s ease-in-out;
+    }
+    aside:hover{
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.495);
+    }
+    .populaires{
+        border: none;
+        background-color: rgba(128, 128, 128, 0.269);
+        padding: 1%;
+        border-radius: 10px;
+    }
+    aside > h2 {
+        display: none;
+    }
+    main{
+        display: grid;
+        grid-area: main;
+        grid-template-columns: 1fr;
+    }
+    .tweet:nth-child(3n) {
+        grid-column: auto;
+    }
+    .imageEtTexte > img{
+        width: 20%;
+    }
+}
+
+
